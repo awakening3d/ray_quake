@@ -1,0 +1,221 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_D3DQUAKE            BITMAP  DISCARDABLE     "d3dquake.bmp"
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON2               ICON    DISCARDABLE     "quake.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG1 DIALOGEX 0, 0, 62, 21
+STYLE DS_MODALFRAME | DS_SETFOREGROUND | DS_3DLOOK | DS_CENTER | WS_POPUP
+EXSTYLE WS_EX_TOOLWINDOW | WS_EX_CLIENTEDGE
+FONT 16, "Times New Roman", 0, 0, 0x1
+BEGIN
+    CTEXT           "Starting Quake...",IDC_STATIC,4,6,54,8
+END
+
+IDD_PROGRESS DIALOGEX 0, 0, 333, 45
+STYLE DS_MODALFRAME | DS_SETFOREGROUND | DS_3DLOOK | DS_CENTER | WS_POPUP | 
+    WS_VISIBLE
+EXSTYLE WS_EX_TOOLWINDOW | WS_EX_CLIENTEDGE
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "Creating 15 bit inverse palette.  This is only done once, so just be patient for the next 30-60 seconds.",
+                    IDC_STATIC,7,19,319,10
+    CONTROL         "Progress1",IDC_PROGRESS,"msctls_progress32",0x0,7,29,
+                    319,11
+    LTEXT           "Starting Quake...",IDC_STATIC,7,4,54,8
+END
+
+IDD_TIMERWAIT DIALOGEX 0, 0, 162, 112
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "D3DQuake V0.91"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "&Close",IDCANCEL,56,95,50,14
+    PUSHBUTTON      "http://aaqiang.home.chinaren.com",IDC_BUTTON1,7,19,148,
+                    14,0,WS_EX_STATICEDGE
+    PUSHBUTTON      "http://www.ProgramArk.com",IDC_BUTTON2,7,38,148,14,0,
+                    WS_EX_STATICEDGE
+    CONTROL         "Progress1",IDC_PROGRESS,"msctls_progress32",PBS_SMOOTH,
+                    7,81,150,8
+    LTEXT           "Welcome visit:",IDC_STATIC,7,7,148,8
+    LTEXT           "Email: aaqiang@263.net",IDC_STATIC,7,58,148,8
+    LTEXT           "Thank Mark's help!",IDC_STATIC,7,68,98,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_DIALOG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 58
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 16
+        HORZGUIDE, 6
+        HORZGUIDE, 16
+    END
+
+    IDD_TIMERWAIT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 155
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 0,9,1,0
+ PRODUCTVERSION 0,9,1,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "d3dquake\0"
+            VALUE "FileVersion", "0, 9, 1, 0\0"
+            VALUE "InternalName", "d3dquake\0"
+            VALUE "LegalCopyright", "Copyright _ 2001\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "d3dquake.exe\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "d3dquake\0"
+            VALUE "ProductVersion", "0, 9, 1, 0\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_STRING1             "WinQuake"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

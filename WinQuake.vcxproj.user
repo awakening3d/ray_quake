@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GL Debug|Win32'">
+    <LocalDebuggerWorkingDirectory>e:\game\quake</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerCommand>e:\game\quake\glquake.exe</LocalDebuggerCommand>
+    <LocalDebuggerCommandArguments>-window -width 1024 -bpp 32</LocalDebuggerCommandArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LocalDebuggerCommand>e:\game\quake\WinQuake.exe</LocalDebuggerCommand>
+    <LocalDebuggerWorkingDirectory>e:\game\quake\</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerCommandArguments>-window -width 1024 -bpp 32</LocalDebuggerCommandArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GL Release|Win32'">
+    <LocalDebuggerCommand>e:\game\quake\glquake.exe</LocalDebuggerCommand>
+    <LocalDebuggerWorkingDirectory>e:\game\quake</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerCommandArguments>-window -width 1024 -bpp 32</LocalDebuggerCommandArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='D3D Debug|Win32'">
+    <LocalDebuggerCommand>e:\game\quake\d3dquake.exe</LocalDebuggerCommand>
+    <LocalDebuggerWorkingDirectory>e:\game\quake\</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerCommandArguments>-window -width 1024 -bpp 32</LocalDebuggerCommandArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LocalDebuggerCommandArguments>-window -width 1024 -bpp 32</LocalDebuggerCommandArguments>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='D3D Release|Win32'">
+    <LocalDebuggerCommandArguments>-window -width 1024 -bpp 32</LocalDebuggerCommandArguments>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerCommand>e:\game\quake\d3dquake.exe</LocalDebuggerCommand>
+    <LocalDebuggerWorkingDirectory>e:\game\quake</LocalDebuggerWorkingDirectory>
+  </PropertyGroup>
+</Project>
