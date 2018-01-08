@@ -296,6 +296,12 @@ void EmitBothSkyLayers (msurface_t *fa)
 }
 
 #ifndef QUAKE2
+
+
+
+
+msurface_t *gSkyChain = NULL;
+
 /*
 =================
 R_DrawSkyChain
@@ -303,6 +309,7 @@ R_DrawSkyChain
 */
 void R_DrawSkyChain (msurface_t *s)
 {
+	gSkyChain = s;
 	msurface_t	*fa;
 
 	GL_DisableMultitexture();

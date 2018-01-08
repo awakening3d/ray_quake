@@ -831,7 +831,9 @@ void CL_ParseServerMessage (void)
 		case svc_serverinfo:
 			CL_ParseServerInfo ();
 			vid.recalc_refdef = true;	// leave intermission full screen
+#ifdef USE_OPENCL
 			cb_OnLevelLoaded();
+#endif
 			break;
 			
 		case svc_setangle:

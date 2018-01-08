@@ -713,7 +713,7 @@ void Draw_StretchRaw(int x, int y, int w, int h, int cols, int rows, byte *data,
 
 	if (blendmode && !r_lightmap.value) {
 		glEnable(GL_BLEND);
-		glBlendFunc(GL_ZERO, GL_SRC_COLOR);
+		glBlendFunc(GL_DST_COLOR, GL_SRC_COLOR);
 	}
 
 	GL_Bind(0);

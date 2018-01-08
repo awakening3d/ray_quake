@@ -1335,7 +1335,7 @@ void R_DrawWorld (void)
 
 	DrawTextureChains ();
 
-	R_BlendLightmaps ();
+	//R_BlendLightmaps ();
 
 
 #ifdef QUAKE2

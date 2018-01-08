@@ -1,6 +1,11 @@
+#ifdef USE_OPENCL
+
+
 #include "CL/cl.h"
 #include <stdio.h>
 #include "windows.h"
+
+#pragma comment( lib, "OpenCL.lib" )
 
 extern "C" {
 	#include "..\quakedef.h"
@@ -200,3 +205,5 @@ bool clRunKernel()
 	cl_int error = clEnqueueNDRangeKernel(queue, clker, 1, NULL, &global_ws, &local_ws, 0, NULL, NULL);
 	return CL_SUCCESS == error;
 }
+
+#endif
