@@ -875,10 +875,18 @@ void Mod_LoadNodes (lump_t *l)
 		for (j=0 ; j<2 ; j++)
 		{
 			p = LittleShort (in->children[j]);
-			if (p >= 0)
+			if (p >= 0) {
 				out->children[j] = loadmodel->nodes + p;
-			else
+			} else {
 				out->children[j] = (mnode_t *)(loadmodel->leafs + (-1 - p));
+				/*
+				//--- for sky content test
+				mleaf_t* pleaf = loadmodel->leafs + (-1 - p);
+				if (CONTENTS_SKY == pleaf->key) {
+					out->contents = -CONTENTS_SKY;
+				}
+				*/
+			}
 		}
 	}
 	
@@ -935,6 +943,16 @@ void Mod_LoadLeafs (lump_t *l)
 		{
 			for (j=0 ; j<out->nummarksurfaces ; j++)
 				out->firstmarksurface[j]->flags |= SURF_UNDERWATER;
+		}
+		else {
+			/*
+			//--- for sky content test
+			for (j = 0; j < out->nummarksurfaces; j++)
+				if (out->firstmarksurface[j]->flags & SURF_DRAWSKY) {
+					out->key = CONTENTS_SKY;
+					break;
+				}
+			*/
 		}
 	}	
 }

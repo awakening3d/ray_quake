@@ -647,7 +647,6 @@ qboolean SV_RecursiveHullCheck (hull_t *hull, int num, float p1f, float p2f, vec
 	int			side;
 	float		midf;
 
-
 // check for empty
 	if (num < 0)
 	{
@@ -663,13 +662,24 @@ qboolean SV_RecursiveHullCheck (hull_t *hull, int num, float p1f, float p2f, vec
 			trace->startsolid = true;
 
 		trace->content = num;
-
+/*		
+		// extra check for sky
+		if (cl.worldmodel && trace->content >= hull->firstclipnode && trace->content <= hull->lastclipnode) {
+			mnode_t* mnode = cl.worldmodel->nodes + trace->content;
+			if (-CONTENTS_SKY == mnode->contents) {
+				//if ( check_sky_content(p1, p2, trace->endpos) )
+					trace->content = CONTENTS_SKY;
+			}
+		}
+		if (trace->content != CONTENTS_SKY) trace->content = num;
+*/		
 		return true;		// empty
 	}
 
 	if (num < hull->firstclipnode || num > hull->lastclipnode)
 		Sys_Error ("SV_RecursiveHullCheck: bad node number");
 
+	//trace->content = num; // use 'content' to record parent node
 //
 // find the point distances
 //

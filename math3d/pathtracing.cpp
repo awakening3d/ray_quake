@@ -1,5 +1,8 @@
 #include "template.h"
 
+//#define USE_OPENCL // whether use opencl to rendering, you should define it in VC's Preprocessor definitions
+//( you need copy raytracing.cl to game folder for opencl rendering )
+
 extern "C" {
 	#include "..\quakedef.h"
 	#include "..\tracing.h"
@@ -24,7 +27,6 @@ cvar_t tl_dlights_shadow_num = { "tl_dlights_shadow_num", "8" }; // Up to how ma
 
 
 //#define SINGLE_THREAD_RENDERING	// whether use single thread rendering
-//#define USE_OPENCL // whether use opencl to rendering ( you need copy raytracing.cl to game folder )
 
 static HANDLE thread_handles[MAX_TRACE_THREAD_NUM];
 
@@ -95,7 +97,7 @@ unsigned pixelcolor(int thread, int x, int y)
 		r = 255, g = 150, b = 100;
 		goto output;
 	}
-	
+		
 	if (CONTENTS_WATER == t.content || CONTENTS_SLIME == t.content || CONTENTS_LAVA == t.content || CONTENTS_SKY == t.content) {
 		r = 255 * contentcolor[-t.content][0] + 128;
 		g = 255 * contentcolor[-t.content][1] + 128;
@@ -277,9 +279,11 @@ extern "C" {
 
 			GenerateRadomNormals();
 			trinfo.rand_normal_num = gNormalNum;
+#ifdef USE_OPENCL
 			clInited = GetWorldModelTris(trinfo, vRadomNormal);
+#endif
 
-			r_lightmap.value = 1;
+			//r_lightmap.value = 1;
 		}
 
 
@@ -305,7 +309,7 @@ extern "C" {
 		clFillLevelData();
 		clRunKernel();
 		clReadPic(pic);
-		Draw_StretchRaw(0, 0, vid.width, vid.height, W, H, (byte*)pic, true);
+		Draw_StretchRaw(r_refdef.vrect.x, r_refdef.vrect.y, r_refdef.vrect.width, r_refdef.vrect.height, W, H, (byte*)pic, true);
 	}
 	return;
 #endif
@@ -354,7 +358,7 @@ extern "C" {
 		WaitForMultipleObjects(tilenum, thread_handles, true, INFINITE);
 #endif
 
-		Draw_StretchRaw(0, 0, vid.width, vid.height, W, H, (byte*)pic, true);
+		Draw_StretchRaw(r_refdef.vrect.x, r_refdef.vrect.y, r_refdef.vrect.width, r_refdef.vrect.height, W, H, (byte*)pic, true);
 	}
 
 }
